@@ -20,7 +20,7 @@
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result1">This text will be replaced </p>
 
 <script> 
 
@@ -35,8 +35,42 @@ function discount(){
             result += i*(a - (a * d)/100);
             result += " ";
         }
-     document.getElementById("result").innerHTML="Discounted amounts for base "+a+" are "+result
+     document.getElementById("result1").innerHTML="Discounted amounts for base "+a+" are "+result
  
+}
+</script>
+
+<form>
+    <input type="radio" id="*" value="times" name="arth" onclick="chooseOp()" >
+    <label for="*">*</label></br>
+  
+    <input type="radio" id="/" value="divide" name="arth" onclick="chooseOp()">
+    <label for="/">/</label></br>
+  
+    <input type="radio" id="**"  value="exponent" name="arth" onclick="chooseOp()">
+    <label for="**">**</label></br>
+</form>    
+    <p id="results2"> perform operation</p>
+
+    <script>
+    function chooseOp(){
+
+    
+     var a = document.getElementById("amount").value
+     var d = document.getElementById("dis").value
+     exponent=document.getElementById("**").checked 
+     times=document.getElementById("*").checked
+     divide=document.getElementById("/").checked
+ 
+if(exponent){
+document.getElementById('results2').innerHTML="<b>(Amount ** discount) Value is: </b>"+a**d
+}
+else if(times){
+document.getElementById('results2').innerHTML="<b>(Amount * discount) Value is: </b>"+a*d
+
+}else if(divide){
+document.getElementById('results2').innerHTML="<b>(Amount / discount) value is: </b>"+a/d
+}
 }
 </script>
 
