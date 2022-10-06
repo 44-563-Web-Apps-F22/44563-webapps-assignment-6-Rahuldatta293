@@ -32,12 +32,12 @@
 
 <form class="form-group">
     <label for="sec_musician">Enter the secret Musician name </label>
-    <input type ="password" id="sec_musician" name="secretName" min=10 max=50 step=2 value="Jhon Lennon" class="form-control"> <br>
+    <input type ="password" id="sec_musician" name="secretName" min=10 max=50 step=2 value="Jhon Lennon"  class="form-control"> <br>
 
     <label for="gs_musician">Guess the Musician </label>
     <input type ="text" id="gs_musician" name="guessMusician" autofocus class="form-control"> <br>
 
-    <input type="button" onclick="checkGuess()" value="Check the Guess">
+    <input type="button" onclick="checkGuess()" value="Check the Guess" >
 </form>
 
 
@@ -61,11 +61,9 @@
                 alert("Wrong");
             }
 
-            if(count>=3){
             if(wrong>=3){
             gameover()
         }  
-            }
            document.getElementById("result").innerHTML="correct "+correct+"  wrong "+wrong;
         }
         function gameover(){
